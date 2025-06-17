@@ -40,26 +40,18 @@
         }
 
         .main-container {
+            height: 100%;
+            width: auto;
         }
         
         .head-page {
-            padding-top: 5pc;
             padding-bottom: 1pc;
             font-family: 'Edu VIC WA NT Hand Pre';
             font-weight: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 10px;
             text-align: center;
-        }
-
-        .head-page h2 {
-            padding-bottom: 5px;
-            border-bottom: 2px solid black;
-            font-weight: 1;
-            font-size: 3pc;
-            margin: 0;
         }
 
         .mid-page {
@@ -203,6 +195,34 @@
             transition: all ease-in-out 0.3s;
         }
 
+        .event-page-container {
+            width: 100%;
+            height: auto;
+            display: flex;
+        }
+
+        .main-event {
+            text-align: center;
+            height: auto;
+            width: 100%;
+        }
+
+        .second-event {
+            height: auto;
+            width: 100%;
+        }
+
+        .main-event img {
+            padding-top: 5pc;
+            height: auto;
+            width: 100%;
+        }
+
+        .second-event img {
+            height: auto;
+            width: 100%;
+        }
+
         p {
             font-family: 'Open Sans';
             font-weight: normal;
@@ -212,10 +232,12 @@
             .head-page {
                 padding-top: 2pc;
                 padding-bottom: 0.5pc;
+                width: auto;
             }
 
-            .head-page h2 {
-                font-size: 2pc;
+            .head-page img {
+                height: auto;
+                width: 100%;
             }
 
             .mid-page {
@@ -277,16 +299,20 @@
             .right-element a:hover {
                 padding: 0;
             }
+
+            .main-event img {
+                padding-top: 2pc;
+            }
         }
     </style>
 </head>
 <body>
     <div class="main-container">
         <div class="head-page">
-            <h2>Ahlan Wa Sahlan</h2>
+            <img src="event.jpg" alt="">
         </div>
         <div class="mid-page">
-            <p>Remaja Masjid Al-Muhajirin</p>
+
         </div>
         <div class="last-page">
             <p>Selamat datang di rumah online <span>Remaja Masjid Al Muhajirin!</span> Website ini dirancang khusus untuk kamu, para remaja yang ingin berkembang dan memberikan dampak. Temukan jadwal kegiatan, materi kajian, dan kesempatan berkolaborasi dalam berbagai program sosial maupun keagamaan. Jadikan website ini sebagai sumber inspirasi dan jembatan untuk silaturahmi. Bersama, kita bangun masa depan yang lebih baik!</p>
@@ -306,6 +332,14 @@
         </div>
         <div class="right-element">
             <a href="">Button</a>
+        </div>
+    </div>
+    <div class="event-page-container">
+        <div class="main-event">
+            <img src="event1.jpg" alt="">
+        </div>
+        <div class="second-event">
+            <img src="event2.jpg" alt="">
         </div>
     </div>
 </body>
