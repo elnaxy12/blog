@@ -1,114 +1,307 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remaja Masjid Al-Muhajirin</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand+Pre:wght@400..700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand+Pre:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <title>Document</title>
-</head>
-<body>
-    <style>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
+    <style>
         body {
             margin: 0;
+            overflow-x: hidden;
             overflow-y: scroll;
-            -webkit-user-select: none; /* Chrome, Safari, Edge */
-            -moz-user-select: none;    /* Firefox */
-            -ms-user-select: none;     /* Internet Explorer/Edge Legacy */
-            user-select: none;         /* Standar CSS */
-        }
-
-        .main-container {
-            width: auto;
-            max-height: 300vh;
-
-            
-        }
-
-        .head-page {
-            width: auto;
-            height: 10pc;
-            font-family: 'Edu VIC WA NT Hand Pre';
-            display: flex;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            margin-top: 10px;
-        }
-
-        .mid-page {
-            width: auto;
-            height: 5pc;
-            display: flex;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: 50px;
-        }
-
-        .last-page p {
-            width: 50%;
-            text-align: center;
-            font-size: 15px;
-        }
-
-        h2 {
-            font-weight: 10;
-            font-size: 3pc;
-            margin: auto;
-        }
-
-        p {
-            font-family: 'Open Sans';
-            font-weight: 10;
-            margin: auto;
-        }
-
-        @media screen and (max-width: 768px){
-            .head-page {
-                width: auto;
-                padding-right: 5px;
-                padding-left: 5px;
-            }
-
-            .mid-page {
-                width: auto;
-                height: 0;
-                margin-top: 2pc;
-            }
-
+            font-family: 'Open Sans', sans-serif;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         body::-webkit-scrollbar {
-            width: 5px; /* Lebar scrollbar */
+            width: 5px;
         }
 
         body::-webkit-scrollbar-track {
-            background: #f1f1f1; /* Warna latar belakang track untuk body */
+            background: #f1f1f1;
         }
 
         body::-webkit-scrollbar-thumb {
-            background-color: #888; /* Warna jempol untuk body (hijau) */
+            background-color: #888;
             border-radius: 10px;
         }
 
         body::-webkit-scrollbar-thumb:hover {
-            background-color: #555; /* Warna jempol saat di-hover */
+            background-color: #555;
+        }
+
+        .main-container {
+        }
+        
+        .head-page {
+            padding-top: 5pc;
+            padding-bottom: 1pc;
+            font-family: 'Edu VIC WA NT Hand Pre';
+            font-weight: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .head-page h2 {
+            padding-bottom: 5px;
+            border-bottom: 2px solid black;
+            font-weight: 1;
+            font-size: 3pc;
+            margin: 0;
+        }
+
+        .mid-page {
+            padding-bottom: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .mid-page p {
+            font-size: 1.2em;
+            font-weight: 1;
+            font-family: 'Open Sans';
+            font-style: italic;
+            margin: 0;
+        }
+
+        .last-page {
+            background-color: #CAE8BD;
+            padding: 5pc 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .last-page p {
+            width: 70%;
+            max-width: 800px;
+            text-align: center;
+            font-size: 16px;
+            color: #4B5945;
+            font-weight: 1;
+            margin: 0;
+        }
+
+        .last-page span {
+            font-weight: bold;
+        }
+
+        .body-container {
+            display: flex;
+            min-height: 60vh;
+        }
+
+        .left-page {
+            flex: 1;
+            min-height: 60vh;
+            position: relative;
+            background-image: url('body-img-first.jpg');
+            background-size: cover;
+            background-position: bottom;
+            background-repeat: no-repeat;
+            background-color: #CAE8BD;
+            border-right: #CAE8BD 10px solid;
+            border-bottom: #CAE8BD 10px solid;
+        }
+
+        .right-page {
+            flex: 1;
+            padding: 20px 5pc;
+            min-height: 75vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .right-page p {
+            font-size: 50px;
+            font-weight: 1;
+            margin: 0;
+            transition: all ease-in-out 0.5s;
+        }
+
+        .right-page p:hover {
+            font-size: 130px;
+            cursor: pointer;
+            color: transparent;
+            -webkit-text-stroke: 2px black;
+        }
+
+        .right-page span {
+            font-weight: bold;
+            font-size: 50px;
+            margin-right: 10px;
+            transition: all ease-in-out 0.2s;
+        }
+
+        .right-page span:hover {
+            cursor: pointer;
+            color: transparent;
+            -webkit-text-stroke: 2px black;
+            transition: all ease-in-out 0.2s;
+
+        }
+
+        .button-container {
+            width: auto;
+            display: flex;
+            height: 5pc;
+            background-color: #CAE8BD;
+        }
+
+        .left-element {
+            display: flex;
+            justify-content: center;
+            height: auto;
+            margin-left: 2pc;
+        }
+
+        .right-element {
+            flex: 1;
+            width: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            padding-right: 2pc;
+            margin-left: 2pc;
+            justify-content: center;
+        }
+
+        .right-element a {
+            border: 1px solid black;
+            background-color: #4B5945;
+            color: white;
+            font-weight: 500;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 8px;
+            padding-right: 8px;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: all ease-in-out 0.2s;
+
+        }
+
+        .right-element a:hover {
+            padding-left: 5pc;
+            cursor: pointer;
+            transition: all ease-in-out 0.3s;
+        }
+
+        p {
+            font-family: 'Open Sans';
+            font-weight: normal;
+        }
+
+        @media screen and (max-width: 768px){
+            .head-page {
+                padding-top: 2pc;
+                padding-bottom: 0.5pc;
+            }
+
+            .head-page h2 {
+                font-size: 2pc;
+            }
+
+            .mid-page {
+                padding-bottom: 20px;
+                margin-top: 1pc;
+            }
+
+            .last-page {
+                padding: 2pc 15px;
+                border-bottom: hidden;
+            }
+
+            .last-page p {
+                width: 90%;
+                font-size: 13px;
+            }
+
+            .body-container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .left-page, .right-page {
+                flex: none;
+                width: 100%;
+                min-height: 40vh;
+                border-right: none;
+                border-bottom: #CAE8BD solid 5px;
+            }
+
+            .right-page {
+                width: auto;
+            }
+
+            .right-page p {
+                font-size: 22px;
+            }
+
+            .right-page p:hover {
+                font-size: 30px;
+            }
+
+            .button-container {
+                height: auto;
+            }
+
+            .left-element {
+                height: 100%;
+                width: 100%;
+                font-size: 13px;
+                margin-left: 1pc;
+            }
+
+            .right-element {
+                justify-content: center;
+                padding-left: 1pc;
+            }
         }
     </style>
-
-    <div class="body">
+</head>
+<body>
+    <div class="main-container">
         <div class="head-page">
-            <h2>Selamat Datang</h2>
+            <h2>Ahlan Wa Sahlan</h2>
         </div>
         <div class="mid-page">
             <p>Remaja Masjid Al-Muhajirin</p>
         </div>
         <div class="last-page">
-            <p>Selamat datang di rumah online Remaja Masjid Al Muhajirin! Website ini dirancang khusus untuk kamu, para remaja yang ingin berkembang dan memberikan dampak. Temukan jadwal kegiatan, materi kajian, dan kesempatan berkolaborasi dalam berbagai program sosial maupun keagamaan. Jadikan website ini sebagai sumber inspirasi dan jembatan untuk silaturahmi. Bersama, kita bangun masa depan yang lebih baik!</p>
+            <p>Selamat datang di rumah online <span>Remaja Masjid Al Muhajirin!</span> Website ini dirancang khusus untuk kamu, para remaja yang ingin berkembang dan memberikan dampak. Temukan jadwal kegiatan, materi kajian, dan kesempatan berkolaborasi dalam berbagai program sosial maupun keagamaan. Jadikan website ini sebagai sumber inspirasi dan jembatan untuk silaturahmi. Bersama, kita bangun masa depan yang lebih baik!</p>
+        </div>
+    </div>
+    
+    <div class="body-container">
+        <div class="left-page"></div>
+        <div class="right-page">
+            <span>Risma?</span>
+            <p>Hebat!</p>
+        </div>
+    </div>
+    <div class="button-container">
+        <div class="left-element">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut, ut. Recusandae esse, minus ex exercitationem aliquid aliquam quae officia laboriosam, </p>
+        </div>
+        <div class="right-element">
+            <a href="">Button</a>
         </div>
     </div>
 </body>
