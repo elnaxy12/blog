@@ -9,16 +9,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand+Pre:wght@400..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             overflow-x: hidden;
             overflow-y: scroll;
             font-family: 'Open Sans', sans-serif;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
             user-select: none;
         }
 
@@ -47,7 +47,7 @@
         .head-page {
             padding-bottom: 1pc;
             font-family: 'Edu VIC WA NT Hand Pre';
-            font-weight: 1;
+            font-weight: 400;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -55,19 +55,55 @@
         }
 
         .mid-page {
-            padding-bottom: 50px;
+            width: 100%;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
         }
 
-        .mid-page p {
-            font-size: 1.2em;
-            font-weight: 1;
+        .risma-logo {
+            width: 50%;
+            min-height: 65vh;
+        }
+
+        .risma-logo img {
+            width: 70%;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-top: 1pc;
+            margin-left: 3pc;
+        }
+
+        .risma-icon {
+            width: 100%;
+            padding-left: 2pc;
+        }
+
+        .risma-icon h2 {
+            text-align: left;
+            font-size: 20px;
+            font-family: 'Poppins';
+            font-weight: bold;
+            color: #4B5945;
+        }
+
+        .risma-icon i {
+            font-size: 20px;
+            color: #4B5945;
+        }
+        
+        .risma-icon a {
+            font-size: 15px;
+            text-decoration: none;
+            color: #4B5945;
             font-family: 'Open Sans';
-            font-style: italic;
-            margin: 0;
+        }
+
+        .risma-maps {
+            width: 100%;
+            height: auto;
+        }
+
+        .risma-maps iframe {
+            margin-left: 2pc;
         }
 
         .last-page {
@@ -82,9 +118,10 @@
             width: 70%;
             max-width: 800px;
             text-align: center;
-            font-size: 16px;
+            font-family: 'Oswald';
+            font-size: 20px;
             color: #4B5945;
-            font-weight: 1;
+            font-weight: 300;
             margin: 0;
         }
 
@@ -118,11 +155,12 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            border-top: #CAE8BD 10px solid;
         }
 
         .right-page p {
             font-size: 50px;
-            font-weight: 1;
+            font-weight: 400;
             margin: 0;
             transition: all ease-in-out 0.5s;
         }
@@ -146,7 +184,6 @@
             color: transparent;
             -webkit-text-stroke: 2px black;
             transition: all ease-in-out 0.2s;
-
         }
 
         .button-container {
@@ -158,17 +195,23 @@
 
         .left-element {
             display: flex;
-            justify-content: center;
             height: auto;
+            width: 100%;
+        }
+
+        .left-element p {
+            font-weight: 400;
             margin-left: 2pc;
+            color: #4B5945;
+            font-family: 'Oswald';
         }
 
         .right-element {
-            flex: 1;
-            width: auto;
+            width: 100%;
+            height: auto;
             display: flex;
             flex-direction: column;
-            align-items: end;
+            align-items: flex-end;
             padding-right: 2pc;
             margin-left: 2pc;
             justify-content: center;
@@ -179,14 +222,10 @@
             background-color: #4B5945;
             color: white;
             font-weight: 500;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            padding-left: 8px;
-            padding-right: 8px;
+            padding: 8px 20px;
             text-decoration: none;
-            border-radius: 15px;
+            border-radius: 50px;
             transition: all ease-in-out 0.2s;
-
         }
 
         .right-element a:hover {
@@ -197,30 +236,30 @@
 
         .event-page-container {
             width: 100%;
-            height: auto;
             display: flex;
+            padding-bottom: 5pc;
         }
 
         .main-event {
-            text-align: center;
-            height: auto;
-            width: 100%;
-        }
-
-        .second-event {
-            height: auto;
+            display: flex;
+            justify-content: center;
             width: 100%;
         }
 
         .main-event img {
-            padding-top: 5pc;
+            width: 50%;
             height: auto;
-            width: 100%;
         }
 
-        .second-event img {
-            height: auto;
+        .second-event {
+            flex: 1;
+            position: relative;
             width: 100%;
+            height: 400px;
+            background-image: url('event2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         p {
@@ -230,19 +269,13 @@
 
         @media screen and (max-width: 768px){
             .head-page {
-                padding-top: 2pc;
-                padding-bottom: 0.5pc;
+                padding-top: 0.5pc;
                 width: auto;
             }
 
             .head-page img {
                 height: auto;
                 width: 100%;
-            }
-
-            .mid-page {
-                padding-bottom: 20px;
-                margin-top: 1pc;
             }
 
             .last-page {
@@ -281,27 +314,73 @@
             }
 
             .button-container {
+                width: 100%;
                 height: auto;
             }
 
             .left-element {
                 height: 100%;
                 width: 100%;
-                font-size: 13px;
                 margin-left: 1pc;
+            }
+            
+            .left-element p {
+                text-align: left;
+                font-size: 9px;
             }
 
             .right-element {
+                display: flex;
                 justify-content: center;
-                padding-left: 1pc;
+                width: 100%;
+                height: auto;
             }
 
-            .right-element a:hover {
-                padding: 0;
+            .main-event {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                min-height: 10vh;
             }
 
             .main-event img {
-                padding-top: 2pc;
+                width: 100%;
+                height: auto;
+            }
+
+            .mid-page {
+                height: 15pc;
+            }
+
+            .risma-icon {
+                width: 50%;
+                height: auto;
+                padding-right: 2pc;
+            }
+
+            .risma-logo {
+                width: 50%;
+                height: auto;
+            }
+
+            .risma-icon h2 {
+                font-size: small;
+            }
+
+            .risma-icon p {
+                font-size: xx-small;
+            }
+
+            .risma-icon i {
+                font-size: xx-small;
+            }
+
+            .risma-icon a {
+                font-size: xx-small;
+            }
+
+            .risma-maps {
+                display: none;
             }
         }
     </style>
@@ -309,10 +388,23 @@
 <body>
     <div class="main-container">
         <div class="head-page">
-            <img src="event.jpg" alt="">
+            <img src="event.jpg" alt="Header Acara">
         </div>
         <div class="mid-page">
-
+            <div class="risma-logo">
+                <img src="risma.jpg" alt="Logo Risma">
+            </div>
+            <div class="risma-icon">
+                <h2>Remaja Islami Masjid Al - Muhajirin (RISMA)</h2>
+                <p style="color: #4B5945;">More than religion based community, inviting to: <br> #mudaberkontribusi #mudabergerak and #mudaberkolaborasi</p>
+                <p style="color: #4B5945;">Follow us! and let's make an impact.</p>
+                <i class="fa-brands fa-square-instagram" > : <a href="https://www.instagram.com/ceritadirisma" target="_blank">@ceritadirisma</a></i>
+                <br>
+                <a style="color: purple;" href="https://maps.app.goo.gl/H39pTjE9k3WzYfWGA" target="_blank">Perumahan Bekasi Regency 1, Cibitung, Bekasi 17520</a>
+            </div>
+            <div class="risma-maps">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.741097063717!2d107.08518937499!3d-6.300642993683009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69888998d3d63b%3A0xcb13e9a4f6a7d97b!2sMasjid%20Al-Muhajirin!5e0!3m2!1sen!2sid!4v1719207000000!5m2!1sen!2sid" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
         <div class="last-page">
             <p>Selamat datang di rumah online <span>Remaja Masjid Al Muhajirin!</span> Website ini dirancang khusus untuk kamu, para remaja yang ingin berkembang dan memberikan dampak. Temukan jadwal kegiatan, materi kajian, dan kesempatan berkolaborasi dalam berbagai program sosial maupun keagamaan. Jadikan website ini sebagai sumber inspirasi dan jembatan untuk silaturahmi. Bersama, kita bangun masa depan yang lebih baik!</p>
@@ -328,18 +420,16 @@
     </div>
     <div class="button-container">
         <div class="left-element">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut, ut. Recusandae esse, minus ex exercitationem aliquid aliquam quae officia laboriosam, </p>
+            <p>Temukan lebih banyak tentang kegiatan kami dan bagaimana kamu bisa terlibat.</p>
         </div>
         <div class="right-element">
-            <a href="">Button</a>
+            <a href="#">Kunjungi</a>
         </div>
     </div>
     <div class="event-page-container">
         <div class="main-event">
-            <img src="event1.jpg" alt="">
         </div>
         <div class="second-event">
-            <img src="event2.jpg" alt="">
         </div>
     </div>
 </body>
