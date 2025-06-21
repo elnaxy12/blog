@@ -254,7 +254,7 @@
 
         .left-element {
             flex: 1;
-            min-width: 250px;
+            min-width: 150px;
             text-align: center;
             padding: 0.5rem;
         }
@@ -269,8 +269,7 @@
         .right-element {
             flex: 1;
             min-width: 150px;
-            display: flex;
-            justify-content: end;
+            text-align: right;
             padding: 0.5rem;
         }
 
@@ -296,29 +295,68 @@
         .event-page-container {
             display: flex;
             flex-wrap: wrap;
-            padding-bottom: 5rem;
+            border-bottom: solid var(--secondary-color) 5px;
         }
 
-        .main-event {
-            flex: 1;
+        .second-page-container {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 400px;
+            flex-wrap: wrap;
+            border-bottom: solid var(--secondary-color) 5px;
         }
 
-        .main-event img {
-            width: 100%;
-            height: auto;
-            display: block;
-            max-height: 400px;
-            object-fit: cover;
+        .first-event {
+            flex: 1;
+            min-height: 400px;
+            background-image: url('event1.jpg');
+            border-right: var(--secondary-color) solid 5px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .second-event {
             flex: 1;
             min-height: 400px;
             background-image: url('event2.jpg');
+            border-right: var(--secondary-color) solid 5px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .last-event {
+            flex: 1;
+            min-height: 400px;
+            background-image: url('event3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .one-event {
+            flex: 1;
+            min-height: 400px;
+            background-image: url('event4.jpg');
+            border-right: #CAE8BD solid 5px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .two-event {
+            flex: 1;
+            min-height: 400px;
+            background-image: url('event5.jpg');
+            border-right: #CAE8BD solid 5px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .three-event {
+            flex: 1;
+            min-height: 400px;
+            background-image: url('event6.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -434,6 +472,7 @@
                 box-sizing: border-box;
             }
             .left-element, .right-element {
+                flex: 1;
                 width: 100%;
                 padding: 0.5rem 0;
                 box-sizing: border-box;
@@ -452,6 +491,7 @@
                 background-color: var(--primary-color);
                 color: white;
                 display: inline-block;
+                text-align: center;
             }
             .right-element a:hover {
                 cursor: default;
@@ -466,7 +506,7 @@
                 padding-bottom: 2rem;
                 box-sizing: border-box;
             }
-            .main-event, .second-event {
+            .first-event, .second-event {
                 flex: none;
                 width: 100%;
                 min-height: 250px;
@@ -514,12 +554,21 @@
             </div>
         </div>
         <div class="event-page-container">
-            <div class="main-event">
+            <div class="first-event">
             </div>
             <div class="second-event">
             </div>
+            <div class="last-event">
+            </div>
         </div>
-    </div>
-    
+        <div class="second-page-container">
+            <div class="one-event">
+            </div>
+            <div class="two-event">
+            </div>
+            <div class="three-event">
+            </div>
+        </div>
+    </div>    
 </body>
 </html>
