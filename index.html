@@ -17,6 +17,7 @@
         :root {
             --primary-color: #4B5945;
             --secondary-color: #CAE8BD;
+            --last-color: #EEEEEE;
             --text-color-light: #f1f1f1;
             --desktop-max-width: 1200px;
             --mobile-breakpoint: 768px;
@@ -366,6 +367,32 @@
             font-family: 'Open Sans', sans-serif;
             font-weight: normal;
         }
+
+        footer {
+            width: 100%;
+        }
+
+        .footer-wrapper {
+            width: 100%;
+            min-height: 400px;
+            margin: 0 auto;
+            max-width: var(--desktop-max-width);
+            background-color: var(--secondary-color);
+        }
+
+        .title-footer {
+            flex: 1;
+            display: flex;
+            width: 100%;
+            min-height: 2pc;
+            background-color: var(--last-color);
+            justify-content: center;
+        }
+
+        .title-footer p {
+            padding-top: 5px;
+            font-size: 0.8rem;
+        }
         @media screen and (max-width: var(--mobile-breakpoint)) {
             .main-wrapper {
                 height: auto;
@@ -512,6 +539,22 @@
                 min-height: 250px;
                 box-sizing: border-box;
             }
+            .footer-wrapper {
+                height: auto;
+                width: 100%;
+                overflow-x: hidden;
+                padding: 0 1rem;
+                box-sizing: border-box;
+            }
+            .title-footer {
+                width: 100%;
+                height: auto;
+                box-sizing: border-box;
+            }
+            .title-footer p {
+                font-size: 0.6rem;
+                word-break: break-word;
+            }
         }
     </style>
 </head>
@@ -528,7 +571,7 @@
                 <h2>Remaja Islami Masjid Al - Muhajirin (RISMA)</h2>
                 <p>More than religion based community, inviting to: <br> #mudaberkontribusi #mudabergerak and #mudaberkolaborasi</p>
                 <p>Follow us! and let's make an impact.</p>
-                <p><i class="fa-brands fa-square-instagram"></i><a href="https://www.instagram.com/ceritadirisma" target="_blank">@ceritadirisma</a></p>
+                <p><i class="fa-brands fa-instagram"></i><a href="https://www.instagram.com/ceritadirisma" target="_blank">@ceritadirisma</a></p>
                 <p style="display: flex;"><i class="fa-solid fa-location-dot"></i> <a href="https://maps.app.goo.gl/z4gmmZrrHwBeXoh87" target="_blank">Perumahan Bekasi Regency 1, Cibitung, Bekasi 17520</a></p>
             </div>
             <div class="risma-maps">
@@ -570,5 +613,12 @@
             </div>
         </div>
     </div>    
+    <footer>
+        <div class="footer-wrapper">    
+        </div>
+        <div class="title-footer">
+            <p>© 2025 Remaja Masjid Al - Muhajirin/RISMA. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
