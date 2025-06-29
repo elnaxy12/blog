@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Comic+Relief:wght@400;700&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #4B5945;
@@ -138,10 +139,9 @@
         }
         
         .risma-icon a {
-            font-size: 0.9rem;
+            font-size: 0.6rem;
             color: var(--primary-color);
             font-family: 'Open Sans', sans-serif;
-            margin-bottom: 0.3rem;
             display: inline-block;
         }
 
@@ -215,14 +215,14 @@
             border-top: var(--secondary-color) 10px solid;
         }
 
-        .right-page p {
+        .right-page p.clicked {
             font-size: 3rem;
             font-weight: 400;
             color: var(--primary-color);
             transition: all ease-in-out 0.5s;
         }
 
-        .right-page p:hover {
+        .right-page p.clicked.clicked-effect {
             font-size: 5rem;
             cursor: pointer;
             color: transparent;
@@ -305,6 +305,19 @@
             border-bottom: solid var(--secondary-color) 5px;
         }
 
+        .overlay {
+            width: 100%;
+            height: 100%;
+            background-color: var(--secondary-color);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .overlay:hover {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
         .first-event {
             flex: 1;
             min-height: 400px;
@@ -363,6 +376,30 @@
             background-repeat: no-repeat;
         }
 
+        .landscape-event {
+            margin: 0 auto;
+            min-height: 800px;
+            background-image: url('event7.jpg');
+            background-size: cover;
+            background-position: bottom;
+            background-repeat: no-repeat;
+            flex: 1;
+            display: flex;
+            justify-content: end;
+            flex-direction: column;
+        }
+        
+        .landscape-event p {
+            font-family: 'Caveat';
+            font-size: 5rem;
+            text-align: center;
+            margin-bottom: 2pc;
+            font-weight: 800;
+            color: var(--secondary-color);
+            -webkit-text-stroke: black 1px;
+
+        }
+
         p {
             font-family: 'Open Sans', sans-serif;
             font-weight: normal;
@@ -391,9 +428,9 @@
 
         .title-footer p {
             padding-top: 5px;
-            font-size: 0.6rem;
+            font-size: 0.9rem;
         }
-        @media screen and (max-width: var(--mobile-breakpoint)) {
+        @media screen and (max-width: 768px) {
             .main-wrapper {
                 height: auto;
                 width: 100%;
@@ -444,12 +481,9 @@
                 margin-bottom: 0.2rem;
             }
             .risma-icon i, .risma-icon a {
-                font-size: 0.75rem;
-                margin-bottom: 0.2rem;
-                display: block;
+                font-size: 0.6rem;
                 word-break: break-word;
             }
-
             .last-page {
                 padding: 2rem 1rem;
                 box-sizing: border-box;
@@ -467,30 +501,24 @@
             .left-page, .right-page {
                 flex: none;
                 width: 100%;
-                min-height: 35vh;
+                min-height: 55vh;
                 border-right: none;
-                border-bottom: var(--secondary-color) solid 5px;
+                border-bottom: none;
                 border-top: none;
                 box-sizing: border-box;
             }
             .right-page {
-                padding: 1.5rem 1rem;
+                padding: 0;
                 box-sizing: border-box;
             }
 
-            .right-page p, .right-page span {
+            .right-page span {
                 font-size: 1.6rem;
                 -webkit-text-stroke: 0px;
                 color: var(--primary-color);
-                transition: none;
+                transition: all 0.5 ease-in-out;
                 word-break: break-word;
                 max-width: unset;
-            }
-            .right-page p:hover, .right-page span:hover {
-                font-size: 1.6rem;
-                cursor: default;
-                color: var(--primary-color);
-                -webkit-text-stroke: 0px;
             }
 
             .button-container {
@@ -529,19 +557,23 @@
             }
 
             .event-page-container {
-                flex-direction: column;
-                padding-bottom: 2rem;
+                flex-direction: row;
                 box-sizing: border-box;
             }
             .first-event, .second-event {
-                flex: none;
                 width: 100%;
                 min-height: 250px;
                 box-sizing: border-box;
             }
-            .footer-wrapper {
-                height: auto;
+            .landscape-event {
                 width: 100%;
+                min-height: 250px;
+                box-sizing: border-box;
+                margin: 0;
+            }
+            .footer-wrapper {
+                width: 100%;
+                min-height: 100px;
                 overflow-x: hidden;
                 padding: 0 1rem;
                 box-sizing: border-box;
@@ -551,6 +583,20 @@
                 height: auto;
                 box-sizing: border-box;
             }
+            .title-footer p {
+                font-size: 0.6rem;
+            }
+            .right-page p.clicked.clicked-effect {
+                font-size: 2.5rem;
+                -webkit-text-stroke: 1px var(--primary-color);
+            }
+            .landscape-event p {
+                font-size: 1.5rem;
+                font-weight: 800;
+                color:#CAE8BD;
+                margin-bottom: 0.4pc;
+                -webkit-text-stroke: black 0.2px;
+            }
         }
     </style>
 </head>
@@ -558,6 +604,16 @@
     <div class="main-wrapper"> 
         <div class="head-page">
             <img src="event.jpg" alt="Header Acara">
+        </div>
+        <div class="body-container">
+            <div class="left-page"></div>
+            <div class="right-page">
+                <span>Risma?</span>
+                <p class="clicked" onclick="this.classList.toggle('clicked-effect')">Hebat!</p>
+            </div>
+        </div>
+        <div class="last-page">
+            <p>Selamat datang di rumah online <span>Remaja Masjid Al Muhajirin!</span> Website ini dirancang khusus untuk kamu, para remaja yang ingin berkembang dan memberikan dampak. Temukan jadwal kegiatan, materi kajian, dan kesempatan berkolaborasi dalam berbagai program sosial maupun keagamaan. Jadikan website ini sebagai sumber inspirasi dan jembatan untuk silaturahmi. Bersama, kita bangun masa depan yang lebih baik!</p>
         </div>
         <div class="mid-page">
             <div class="risma-logo">
@@ -568,20 +624,10 @@
                 <p>More than religion based community, inviting to: <br> #mudaberkontribusi #mudabergerak and #mudaberkolaborasi</p>
                 <p>Follow us! and let's make an impact.</p>
                 <p><i class="fa-brands fa-instagram"></i><a href="https://www.instagram.com/ceritadirisma" target="_blank">@ceritadirisma</a></p>
-                <p style="display: flex;"><i class="fa-solid fa-location-dot"></i> <a href="https://maps.app.goo.gl/z4gmmZrrHwBeXoh87" target="_blank">Perumahan Bekasi Regency 1, Cibitung, Bekasi 17520</a></p>
+                <p><i class="fa-solid fa-location-dot"></i> <a href="https://maps.app.goo.gl/z4gmmZrrHwBeXoh87" target="_blank">Perumahan Bekasi Regency 1, Cibitung, Bekasi 17520</a></p>
             </div>
             <div class="risma-maps">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15864.942149475071!2d107.0886807!3d-6.2326501!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698f68978762a5%3A0x294d3070948af476!2sMasjid%20Jami'%20Al%20Muhajirin!5e0!3m2!1sid!2sid!4v1750415892172!5m2!1sid!2sid" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-        <div class="last-page">
-            <p>Selamat datang di rumah online <span>Remaja Masjid Al Muhajirin!</span> Website ini dirancang khusus untuk kamu, para remaja yang ingin berkembang dan memberikan dampak. Temukan jadwal kegiatan, materi kajian, dan kesempatan berkolaborasi dalam berbagai program sosial maupun keagamaan. Jadikan website ini sebagai sumber inspirasi dan jembatan untuk silaturahmi. Bersama, kita bangun masa depan yang lebih baik!</p>
-        </div>
-        <div class="body-container">
-            <div class="left-page"></div>
-            <div class="right-page">
-                <span>Risma?</span>
-                <p>Hebat!</p>
             </div>
         </div>
         <div class="button-container">
@@ -594,19 +640,28 @@
         </div>
         <div class="event-page-container">
             <div class="first-event">
+                <div class="overlay"></div>
             </div>
             <div class="second-event">
+                <div class="overlay"></div>
             </div>
             <div class="last-event">
+                <div class="overlay"></div>
             </div>
         </div>
         <div class="second-page-container">
             <div class="one-event">
+                <div class="overlay"></div>
             </div>
             <div class="two-event">
+                <div class="overlay"></div>
             </div>
             <div class="three-event">
+                <div class="overlay"></div>
             </div>
+        </div>
+        <div class="landscape-event">
+            <p>PESANTREN KILAT 2025</p>
         </div>
     </div>    
     <footer>
