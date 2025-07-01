@@ -18,7 +18,6 @@
         :root {
             --primary-color: #4B5945;
             --secondary-color: #CAE8BD;
-            --last-color: #EEEEEE;
             --text-color-light: #f1f1f1;
             --desktop-max-width: 1200px;
             --mobile-breakpoint: 768px;
@@ -66,20 +65,16 @@
         }
         
         .head-page {
+            width: 100%;
+            min-height: 40vh;
             padding-bottom: 1.5rem;
-            font-family: 'Edu VIC WA NT Hand Pre', cursive;
-            font-weight: 400;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
             padding-top: 1rem;
+            display: none;
         }
 
         .head-page img {
             max-width: 100%;
             height: auto;
-            display: block;
         }
 
         .mid-page {
@@ -200,7 +195,9 @@
             background-repeat: no-repeat;
             background-color: var(--secondary-color);
             border-right: var(--secondary-color) 10px solid;
+            border-left: var(--secondary-color) 2pc solid;
             border-bottom: var(--secondary-color) 10px solid;
+
         }
 
         .right-page {
@@ -377,27 +374,19 @@
         }
 
         .landscape-event {
+            flex: 1;
+            display: flex;
+            justify-content: end;
+            flex-direction: column;
             margin: 0 auto;
             min-height: 800px;
             background-image: url('event7.jpg');
             background-size: cover;
             background-position: bottom;
             background-repeat: no-repeat;
-            flex: 1;
-            display: flex;
-            justify-content: end;
-            flex-direction: column;
-        }
-        
-        .landscape-event p {
-            font-family: 'Caveat';
-            font-size: 5rem;
-            text-align: center;
-            margin-bottom: 2pc;
-            font-weight: 800;
-            color: var(--secondary-color);
-            -webkit-text-stroke: black 1px;
-
+            border-bottom: #CAE8BD solid 5px;
+            border-bottom-right-radius: 12px;
+            border-bottom-left-radius: 12px;
         }
 
         p {
@@ -410,11 +399,9 @@
         }
 
         .footer-wrapper {
-            width: 100%;
             min-height: 400px;
             margin: 0 auto;
             max-width: var(--desktop-max-width);
-            background-color: var(--secondary-color);
         }
 
         .title-footer {
@@ -422,15 +409,24 @@
             display: flex;
             width: 100%;
             min-height: 2pc;
-            background-color: var(--last-color);
+            background-color: var(--primary-color);
             justify-content: center;
         }
 
         .title-footer p {
+            color: white;
             padding-top: 5px;
             font-size: 0.9rem;
         }
+
+        .main-footer {
+            width: 100%;
+            min-height: 400px;
+        }
         @media screen and (max-width: 768px) {
+            footer {
+                background-color: white;
+            }
             .main-wrapper {
                 height: auto;
                 width: 100%;
@@ -507,8 +503,15 @@
                 border-top: none;
                 box-sizing: border-box;
             }
+            .left-page {
+                border-left: none;
+                min-height: 65vh;
+                border-bottom-left-radius: 12px;
+                border-bottom-right-radius: 12px;
+            }
             .right-page {
                 padding: 0;
+                display: none;
                 box-sizing: border-box;
             }
 
@@ -525,6 +528,8 @@
                 flex-direction: column;
                 padding: 1rem;
                 box-sizing: border-box;
+                border-top-left-radius: 12px;
+                border-top-right-radius: 12px;
             }
             .left-element, .right-element {
                 flex: 1;
@@ -567,24 +572,29 @@
             }
             .landscape-event {
                 width: 100%;
+                margin: 0;
                 min-height: 250px;
                 box-sizing: border-box;
-                margin: 0;
             }
             .footer-wrapper {
-                width: 100%;
                 min-height: 100px;
+                width: 100%;
                 overflow-x: hidden;
                 padding: 0 1rem;
                 box-sizing: border-box;
             }
+            .main-footer {
+                width: 100%;
+                min-height: 100px;
+            }
             .title-footer {
                 width: 100%;
-                height: auto;
+                min-height: 10px;
                 box-sizing: border-box;
             }
             .title-footer p {
                 font-size: 0.6rem;
+                padding: 5px;
             }
             .right-page p.clicked.clicked-effect {
                 font-size: 2.5rem;
@@ -605,15 +615,15 @@
         <div class="head-page">
             <img src="event.jpg" alt="Header Acara">
         </div>
+        <div class="last-page">
+            <p>Selamat datang di rumah online <span>Remaja Masjid Al Muhajirin!</span> Website ini dirancang khusus untuk kamu, para remaja yang ingin berkembang dan memberikan dampak. Temukan jadwal kegiatan, materi kajian, dan kesempatan berkolaborasi dalam berbagai program sosial maupun keagamaan. Jadikan website ini sebagai sumber inspirasi dan jembatan untuk silaturahmi. Bersama, kita bangun masa depan yang lebih baik!</p>
+        </div>
         <div class="body-container">
             <div class="left-page"></div>
             <div class="right-page">
                 <span>Risma?</span>
                 <p class="clicked" onclick="this.classList.toggle('clicked-effect')">Hebat!</p>
             </div>
-        </div>
-        <div class="last-page">
-            <p>Selamat datang di rumah online <span>Remaja Masjid Al Muhajirin!</span> Website ini dirancang khusus untuk kamu, para remaja yang ingin berkembang dan memberikan dampak. Temukan jadwal kegiatan, materi kajian, dan kesempatan berkolaborasi dalam berbagai program sosial maupun keagamaan. Jadikan website ini sebagai sumber inspirasi dan jembatan untuk silaturahmi. Bersama, kita bangun masa depan yang lebih baik!</p>
         </div>
         <div class="mid-page">
             <div class="risma-logo">
@@ -661,11 +671,12 @@
             </div>
         </div>
         <div class="landscape-event">
-            <p>PESANTREN KILAT 2025</p>
         </div>
     </div>    
     <footer>
-        <div class="footer-wrapper">    
+        <div class="footer-wrapper">
+            <div class="main-footer">
+            </div>  
         </div>
         <div class="title-footer">
             <p>© 2025 Remaja Masjid Al - Muhajirin/RISMA. All Rights Reserved.</p>
