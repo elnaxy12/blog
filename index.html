@@ -24,10 +24,10 @@
         }
 
         body {
+            font-family: 'Open Sans', sans-serif;
             margin: 0;
             overflow-x: hidden;
             overflow-y: scroll;
-            font-family: 'Open Sans', sans-serif;
             user-select: none;
             color: var(--primary-color);
         }
@@ -69,7 +69,7 @@
             min-height: 40vh;
             padding-bottom: 1.5rem;
             padding-top: 1rem;
-            display: none;
+            display: none; /* Consider if you want this to be part of fade-up */
         }
 
         .head-page img {
@@ -159,7 +159,7 @@
 
         .last-page {
             background-color: var(--secondary-color);
-            padding: 5rem 2rem;
+            padding: 2em 2rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -197,7 +197,6 @@
             border-right: var(--secondary-color) 10px solid;
             border-left: var(--secondary-color) 2pc solid;
             border-bottom: var(--secondary-color) 10px solid;
-
         }
 
         .right-page {
@@ -290,13 +289,9 @@
             border-color: #3a4734;
         }
 
-        .event-page-container {
-            display: flex;
-            flex-wrap: wrap;
-            border-bottom: solid var(--secondary-color) 5px;
-        }
-
-        .second-page-container {
+        .event-page-container,
+        .second-page-container,
+        .page-container {
             display: flex;
             flex-wrap: wrap;
             border-bottom: solid var(--secondary-color) 5px;
@@ -315,63 +310,26 @@
             cursor: pointer;
         }
 
-        .first-event {
+        .first-event, .second-event, .last-event,
+        .one-event, .two-event, .three-event,
+        .one-page, .two-page, .three-page {
             flex: 1;
             min-height: 400px;
-            background-image: url('event1.jpg');
-            border-right: var(--secondary-color) solid 5px;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+        }
+        .first-event, .second-event, .one-event, .two-event, .one-page, .two-page {
+            border-right: var(--secondary-color) solid 5px;
         }
 
-        .second-event {
-            flex: 1;
-            min-height: 400px;
-            background-image: url('event2.jpg');
-            border-right: var(--secondary-color) solid 5px;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .last-event {
-            flex: 1;
-            min-height: 400px;
-            background-image: url('event3.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+        .first-event { background-image: url('event1.jpg'); }
+        .second-event { background-image: url('event2.jpg'); }
+        .last-event { background-image: url('event3.jpg'); }
         
-        .one-event {
-            flex: 1;
-            min-height: 400px;
-            background-image: url('event4.jpg');
-            border-right: #CAE8BD solid 5px;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .two-event {
-            flex: 1;
-            min-height: 400px;
-            background-image: url('event5.jpg');
-            border-right: #CAE8BD solid 5px;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .three-event {
-            flex: 1;
-            min-height: 400px;
-            background-image: url('event6.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+        .one-event { background-image: url('event4.jpg'); }
+        .two-event { background-image: url('event5.jpg'); }
+        .three-event { background-image: url('event6.jpg'); }
 
         .landscape-event {
             flex: 1;
@@ -411,6 +369,7 @@
             min-height: 2pc;
             background-color: var(--primary-color);
             justify-content: center;
+            align-items: center; /* Menengahkan vertikal */
         }
 
         .title-footer p {
@@ -419,10 +378,19 @@
             font-size: 0.9rem;
         }
 
-        .main-footer {
-            width: 100%;
-            min-height: 400px;
+        /* ----- FADE UP ANIMATION STYLES ----- */
+        .fade-up-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
+
+        .fade-up-item.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* ------------------------------------ */
+
         @media screen and (max-width: 768px) {
             footer {
                 background-color: white;
@@ -511,7 +479,7 @@
             }
             .right-page {
                 padding: 0;
-                display: none;
+                display: none; /* If you want to hide this on mobile */
                 box-sizing: border-box;
             }
 
@@ -576,6 +544,12 @@
                 min-height: 250px;
                 box-sizing: border-box;
             }
+            .one-page, .two-page, .three-page {
+                width: 100%;
+                min-height: 15vh;
+                margin: 0;
+                padding: 0;
+            }
             .footer-wrapper {
                 min-height: 100px;
                 width: 100%;
@@ -612,20 +586,20 @@
 </head>
 <body>
     <div class="main-wrapper"> 
-        <div class="head-page">
+        <div class="head-page fade-up-item">
             <img src="event.jpg" alt="Header Acara">
         </div>
-        <div class="last-page">
+        <div class="last-page fade-up-item">
             <p>Selamat datang di rumah online <span>Remaja Masjid Al Muhajirin!</span> Website ini dirancang khusus untuk kamu, para remaja yang ingin berkembang dan memberikan dampak. Temukan jadwal kegiatan, materi kajian, dan kesempatan berkolaborasi dalam berbagai program sosial maupun keagamaan. Jadikan website ini sebagai sumber inspirasi dan jembatan untuk silaturahmi. Bersama, kita bangun masa depan yang lebih baik!</p>
         </div>
         <div class="body-container">
-            <div class="left-page"></div>
-            <div class="right-page">
+            <div class="left-page fade-up-item"></div>
+            <div class="right-page fade-up-item">
                 <span>Risma?</span>
                 <p class="clicked" onclick="this.classList.toggle('clicked-effect')">Hebat!</p>
             </div>
         </div>
-        <div class="mid-page">
+        <div class="mid-page fade-up-item">
             <div class="risma-logo">
                 <img src="risma.jpg" alt="Logo Risma">
             </div>
@@ -640,7 +614,7 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15864.942149475071!2d107.0886807!3d-6.2326501!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698f68978762a5%3A0x294d3070948af476!2sMasjid%20Jami'%20Al%20Muhajirin!5e0!3m2!1sid!2sid!4v1750415892172!5m2!1sid!2sid" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
-        <div class="button-container">
+        <div class="button-container fade-up-item">
             <div class="left-element">
                 <p>Temukan lebih banyak tentang kegiatan kami dan bagaimana kamu bisa terlibat.</p>
             </div>
@@ -648,7 +622,7 @@
                 <a href="#">Kunjungi</a>
             </div>
         </div>
-        <div class="event-page-container">
+        <div class="event-page-container fade-up-item">
             <div class="first-event">
                 <div class="overlay"></div>
             </div>
@@ -659,7 +633,7 @@
                 <div class="overlay"></div>
             </div>
         </div>
-        <div class="second-page-container">
+        <div class="second-page-container fade-up-item">
             <div class="one-event">
                 <div class="overlay"></div>
             </div>
@@ -670,17 +644,142 @@
                 <div class="overlay"></div>
             </div>
         </div>
-        <div class="landscape-event">
+        <div class="landscape-event fade-up-item">
+            </div>
+        <div class="page-container fade-up-item">
+            <div class="one-page">
+                <div class="overlay"></div>
+            </div>
+            <div class="two-page">
+                <div class="overlay"></div>
+            </div>
+            <div class="three-page">
+                <div class="overlay"></div>
+            </div>
         </div>
-    </div>    
+        <div class="page-container fade-up-item">
+            <div class="one-page">
+                <div class="overlay"></div>
+            </div>
+            <div class="two-page">
+                <div class="overlay"></div>
+            </div>
+            <div class="three-page">
+                <div class="overlay"></div>
+            </div>
+        </div>
+        <div class="page-container fade-up-item">
+            <div class="one-page">
+                <div class="overlay"></div>
+            </div>
+            <div class="two-page">
+                <div class="overlay"></div>
+            </div>
+            <div class="three-page">
+                <div class="overlay"></div>
+            </div>
+        </div>
+        <div class="page-container fade-up-item">
+            <div class="one-page">
+                <div class="overlay"></div>
+            </div>
+            <div class="two-page">
+                <div class="overlay"></div>
+            </div>
+            <div class="three-page">
+                <div class="overlay"></div>
+            </div>
+        </div>
+        <div class="page-container fade-up-item">
+            <div class="one-page">
+                <div class="overlay"></div>
+            </div>
+            <div class="two-page">
+                <div class="overlay"></div>
+            </div>
+            <div class="three-page">
+                <div class="overlay"></div>
+            </div>
+        </div>
+        <div class="page-container fade-up-item">
+            <div class="one-page">
+                <div class="overlay"></div>
+            </div>
+            <div class="two-page">
+                <div class="overlay"></div>
+            </div>
+            <div class="three-page">
+                <div class="overlay"></div>
+            </div>
+        </div>
+        <div class="page-container fade-up-item">
+            <div class="one-page">
+                <div class="overlay"></div>
+            </div>
+            <div class="two-page">
+                <div class="overlay"></div>
+            </div>
+            <div class="three-page">
+                <div class="overlay"></div>
+            </div>
+        </div>
+        <div class="page-container fade-up-item">
+            <div class="one-page">
+                <div class="overlay"></div>
+            </div>
+            <div class="two-page">
+                <div class="overlay"></div>
+            </div>
+            <div class="three-page">
+                <div class="overlay"></div>
+            </div>
+        </div>
+        <div class="page-container fade-up-item">
+            <div class="one-page">
+                <div class="overlay"></div>
+            </div>
+            <div class="two-page">
+                <div class="overlay"></div>
+            </div>
+            <div class="three-page">
+                <div class="overlay"></div>
+            </div>
+        </div>
+    </div>      
     <footer>
-        <div class="footer-wrapper">
+        <div class="footer-wrapper fade-up-item">
             <div class="main-footer">
             </div>  
         </div>
-        <div class="title-footer">
+        <div class="title-footer fade-up-item">
             <p>© 2025 Remaja Masjid Al - Muhajirin/RISMA. All Rights Reserved.</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const fadeUpElements = document.querySelectorAll('.fade-up-item');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    } else {
+                        entry.target.classList.remove('is-visible');
+                    }
+                });
+            }, observerOptions);
+
+            fadeUpElements.forEach((element, index) => {
+                element.style.transitionDelay = `${index * 100}ms`;
+                observer.observe(element);
+            });
+        });
+    </script>
 </body>
 </html>
