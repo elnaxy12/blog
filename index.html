@@ -336,15 +336,28 @@
             flex: 1;
             display: flex;
             justify-content: end;
-            flex-direction: column;
+            flex-direction: row;
             margin: 0 auto;
-            min-height: 800px;
-            background-image: url('event7.jpg');
             background-color: var(--secondary-color);
-            background-size: cover;
-            background-position: bottom;
-            background-repeat: no-repeat;
             border-bottom: #CAE8BD solid 5px;
+        }
+
+        .event-fest {
+            width: 100%;
+            background-image: url('event-fest.jpg');
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-left: var(--secondary-color) 5px solid;
+        }
+
+        .event-fest-post {
+            background-color: var(--secondary-color);
+        }
+
+        .event-fest-post p {
+            padding: 15px 10px;
+            font-size: 0.8rem;
         }
 
         p {
@@ -520,22 +533,19 @@
                 flex-direction: row;
                 box-sizing: border-box;
             }
-            .first-event, .second-event {
-                width: 100%;
-                min-height: 250px;
-                box-sizing: border-box;
-            }
+        .first-event, .second-event, .last-event,
+        .one-event, .two-event, .three-event,
+        .one-page, .two-page, .three-page {
+            flex: 1;
+            min-height: 200px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
             .landscape-event {
                 width: 100%;
                 margin: 0;
-                min-height: 250px;
                 box-sizing: border-box;
-            }
-            .one-page, .two-page, .three-page {
-                width: 100%;
-                min-height: 15vh;
-                margin: 0;
-                padding: 0;
             }
             .footer-wrapper {
                 min-height: 100px;
@@ -554,7 +564,7 @@
                 box-sizing: border-box;
             }
             .title-footer p {
-                font-size: 0.6rem;
+                font-size: 0.4rem;
                 padding: 5px;
             }
             .right-page p.clicked.clicked-effect {
@@ -567,6 +577,15 @@
                 color:#CAE8BD;
                 margin-bottom: 0.4pc;
                 -webkit-text-stroke: black 0.2px;
+            }
+            .event-fest-post {
+                padding: 0;
+            }
+            .event-fest-post p {
+                font-size: 0.5rem;
+            }
+            video {
+                width: 40%;
             }
         }
     </style>
@@ -609,6 +628,16 @@
                 <a href="#">Kunjungi</a>
             </div>
         </div>
+        <div class="landscape-event ">
+            <video controls width="400" heigth="100">
+                <source src="risma-vidio.mp4"  type="video/mp4">
+                Browser Anda tidak mendukung tag video.
+            </video>
+            <div class="event-fest"></div>            
+        </div>
+        <div class="event-fest-post">
+            <p>Lewat ajang ini, lebih dari 90 peserta menunjukkan bakat terbaik mereka dalam lomba adzan, tilawah, poster, cerpen, dai cilik, dan pawai Muharram. Sambutan hangat dari ketua panitia, cerita di balik acara, dan tentu saja daftar pemenang lengkap, semuanya kami rangkum di sini! 🏆 <br>Terima kasih untuk semua yang terlibat. Semoga semangat ini terus hidup, dan masjid makin ramai oleh kebaikan dan kreativitas generasi muda</p>
+        </div>
         <div class="event-page-container ">
             <div class="first-event">
                 <div class="overlay"></div>
@@ -631,8 +660,6 @@
                 <div class="overlay"></div>
             </div>
         </div>
-        <div class="landscape-event ">
-            </div>
         <div class="page-container ">
             <div class="one-page">
                 <div class="overlay"></div>
